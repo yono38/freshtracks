@@ -1,0 +1,73 @@
+@import 'commons.scss';
+
+$spotifygrey: #272626;
+
+#player-pg {
+  /* The Left Column Box */
+  #play-box {
+    background-color: $spotifygrey;
+    border-radius: 15px;
+    color: white;
+    min-height: 250px;
+    text-align: center;
+    font-size: 35px;
+    padding: 0;
+  }
+  #play-box.initial {
+    background-color: black;
+    padding-top: 65px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  /* The Right Column Box */
+  #playlist-manager {
+    /* Shown When Picking Artist */
+    #search-artist {
+      /* Fit to width of input */
+      .dropdown-menu {
+        min-width: 337px;
+      }
+      .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+        background-color: $dkgreen;
+      }
+      h2 {
+        font-size: 26px;
+      }
+      h2, h4 {
+        margin: 0;
+      }
+      input {
+        margin-top: 15px;
+      }
+      #submit-container {
+        padding-top: 10px;
+        text-align: right;
+        #submit-btn {
+          font-family: $quatro;
+          background-color: $ltgrey;
+          color: white;
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    /* Shown After Playlist Loaded */
+    #artist-found {
+      #social-btns {
+        font-size: 20px;
+        #facebook-btn {
+          color: #3b5998;
+        }
+      }
+      #reset-btn {
+        margin-top: 25px;
+        background-color: $dkgreen;
+        color: white;
+        font-family: $quatro;
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,20 @@
+@import 'commons.scss';
+
+#error-pg {
+  margin: 50px 0;
+  text-align: center;
+  h1, h2 {
+    margin: 0;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  #error-msg {
+    margin: 20px;
+  }
+  #retry-btn {
+    font-family: $quatro;
+    color: white;
+    background-color: $dkgreen;
+  }
+}

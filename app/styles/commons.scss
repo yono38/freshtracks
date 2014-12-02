@@ -1,0 +1,17 @@
+// Personally I prefer using google web fonts, but it's your spec
+@font-face {
+  font-family: Quatro Ultra;
+  src: url("../fonts/QuatroUltraBlack.otf") format("opentype");
+}
+$quatro: Quatro Ultra, Helvetica, sans-serif;
+
+// Color Palette
+$dkgreen: #4c7235;
+$orange: #ee5823;
+$white: white;
+$ltgrey: #adadad;
+
+.quatro-header {
+  font-family: Quatro Ultra, Helvetica, sans-serif;
+  color: #4c7235;
+}

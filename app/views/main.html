@@ -1,0 +1,45 @@
+<div id="player-pg">
+  <div class="tracks-widget row">
+    <div id="play-box" ng-class="{initial: !songIds}" class="col-sm-6">
+      <span ng-hide="songIds" class="fa-stack fa-lg">
+      <i class="fa fa-circle-o fa-stack-2x"></i>
+        <i class="fa fa-volume-up fa-stack-1x"></i>
+      </span>
+      <iframe ng-if="songIds"src="{{getPlaylistUrl() | trustAsResourceUrl}}" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+    </div>
+    <div id="playlist-manager" class="col-sm-6">
+      <div id="search-artist" ng-hide="songIds">
+        <h2>Add your favorite artist of 2014</h2>
+        <h4>to Applebee's Fresh Tracks playlist to enter!</h4>
+          <input type="text" ng-enter="getPlaylist()" ng-model="selectedArtist" typeahead="artist for artist in artists | filter:$viewValue | limitTo:5" placeholder="Search for an Artist" class="form-control input-lg">
+        <div id="submit-container">
+          <img ng-show="searching" src="images/f_140513_applebees_lb_contentLoader.gif" alt="Loading your playlist..." />
+          <button ng-click="getPlaylist()" id="submit-btn" type="button" class="btn btn-default btn-lg">
+            Enter <span class="glyphicon glyphicon-chevron-right">
+          </button>
+        </div>
+      </div>
+      <div ng-show="songIds" id="artist-found">
+        <h1 class="quatro-header">Applebee's Fresh Tracks Playlist</h1>
+        <h2>Based on: <strong>{{selectedArtist}}</strong></h2>
+        <h4>Share Your Playlist:</h4>
+        <div id="social-btns">
+          <a id="facebook-btn" target="_blank" ng-href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]={{getSpotifyUrl()}}">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <a target="_blank" href="https://twitter.com/share?text=Serving up the freshest music all summer long&url={{getSpotifyUrl()}}">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </div>
+        <button id="reset-btn" ng-click="reset()" class="btn btn-lg btn-default">Make Another</button>
+      </div>
+    </div>
+  </div>
+</div>
